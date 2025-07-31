@@ -23,12 +23,20 @@ export default defineConfig([
       },
     },
     rules: {
+      //React
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
       'react/prop-types': 0,
       'react/display-name': 0,
-
+      //MUI
+      'no-restricted-imports': [
+        'error',
+        {
+          'patterns': [{ 'regex': '^@mui/[^/]+$' }]
+        }
+      ],
+      //General
       'no-console': 1,
       'no-lonely-if': 1,
       // eslint-disable-next-line no-dupe-keys
@@ -47,7 +55,7 @@ export default defineConfig([
       'keyword-spacing': 1,
       'comma-dangle': 1,
       'comma-spacing': 1,
-      'arrow-spacing': 1  
-    },
-  },
+      'arrow-spacing': 1
+    }
+  }
 ])
