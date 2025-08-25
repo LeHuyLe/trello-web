@@ -12,12 +12,12 @@ import SettingsBrightnessIcon from '@mui/icons-material/SettingsBrightness'
 function ModeSelect() {
   const { mode, setMode } = useColorScheme()
   const handleChange = (event) => {
-    const selectedMode = event.target.value;
+    const selectedMode = event.target.value
     //console.log('Selected mode:', selectedMode);
     setMode(selectedMode)
   }
   return (
-    <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+    <FormControl size="small" sx={{ minWidth: 120 }}>
       <InputLabel id="label-dark-light-mode">Mode</InputLabel>
       <Select
         labelId="label-dark-light-mode"
@@ -27,17 +27,17 @@ function ModeSelect() {
         onChange={handleChange}
       >
         <MenuItem value="light">
-          <div style={{alignItems:'center', display:'flex',gap:'5px'}}> 
+          <div style={{ alignItems:'center', display:'flex', gap:'5px' }}>
             <LightModeIcon fontSize='small'/>Light
           </div>
         </MenuItem>
         <MenuItem value="dark">
-          <div style={{alignItems:'center', display:'flex',gap:'5px'}}> 
+          <div style={{ alignItems:'center', display:'flex', gap:'5px' }}>
             <DarkModeIcon fontSize='small'/>Dark
           </div>
         </MenuItem>
         <MenuItem value="system">
-          <div style={{alignItems:'center', display:'flex',gap:'5px'}}> 
+          <div style={{ alignItems:'center', display:'flex', gap:'5px' }}>
             <SettingsBrightnessIcon fontSize='small'/>System
           </div>
         </MenuItem>
