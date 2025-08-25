@@ -11,7 +11,7 @@ export default defineConfig([
     extends: [
       js.configs.recommended,
       reactHooks.configs['recommended-latest'],
-      reactRefresh.configs.vite,
+      reactRefresh.configs.vite
     ],
     languageOptions: {
       ecmaVersion: 2020,
@@ -19,8 +19,8 @@ export default defineConfig([
       parserOptions: {
         ecmaVersion: 'latest',
         ecmaFeatures: { jsx: true },
-        sourceType: 'module',
-      },
+        sourceType: 'module'
+      }
     },
     rules: {
       //React
@@ -38,8 +38,9 @@ export default defineConfig([
       ],
       //General
       'no-console': 1,
+      'no-extra-boolean-cast': 0,
       'no-lonely-if': 1,
-      //'no-unused-vars': 1,
+      //   'no-unused-vars': 1,
       'no-trailing-spaces': 1,
       'no-multi-spaces': 1,
       'no-multiple-empty-lines': 1,
