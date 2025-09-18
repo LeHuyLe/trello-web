@@ -36,7 +36,9 @@ function BoardBar() {
       justifyContent: 'space-between',
       gap:2,
       overflowX: 'auto',
-      borderTop: '1px solid #2196f3'
+      borderTop: '1px solid #2196f3',
+      '&::-webkit-scrollbar-track':{ m: 2 },
+      bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#44444E' : '#ebecf0')
     }}>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
         <Chip sx={menu_style} icon={<DashboardIcon />} label="Demo Trello Board"
@@ -60,7 +62,9 @@ function BoardBar() {
         <AvatarGroup
           max={4}
           sx={{
-            '& .MuiAvatar-root': { width: 32, height: 32, fontSize: '15px' }
+            gap:1,
+            '& .MuiAvatar-root': { width: 32, height: 32, fontSize: '15px', border: 'none', color:'white',
+              cursor:'pointer', '&:first-of-type': { bgcolor: '#a4b0be' } }
           }}>
           <Tooltip title="Members">
             <Avatar alt="TruongHuy" src="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg" />

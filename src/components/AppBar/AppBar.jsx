@@ -1,5 +1,5 @@
 import Box from '@mui/material/Box'
-import ModeSelect from '@/components/ModeSelect'
+import ModeSelect from '@/components/ModeSelect/ModeSelect'
 import AppsIcon from '@mui/icons-material/Apps'
 import { ReactComponent as TrelloIcon } from '@/assets/trello.svg'
 import SvgIcon from '@mui/material/SvgIcon'
@@ -26,20 +26,26 @@ function AppBar() {
       alignItems: 'center',
       justifyContent: 'space-between',
       gap:2,
-      overflowX: 'auto'
+      overflowX: 'auto',
+      '&::-webkit-scrollbar-track':{ m: 2 },
+      bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#37353E' : 'white'),
+      color: (theme) => (theme.palette.mode === 'dark' ? '#e5e7eb' : theme.palette.primary.main)
     }}>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-        <AppsIcon sx={{ fontSize: 30, color: 'primary.main' }} />
+        <AppsIcon sx={{ fontSize: 30 }} />
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-          <SvgIcon component={TrelloIcon} inheritViewBox sx={{ color: 'primary.main', width: 30, height: 30 }} />
-          <Typography variant="span" sx={{ fontSize:'1.2rem', fontWeight: 'bold', color: 'primary.main' }}>Trello</Typography>
+          <SvgIcon component={TrelloIcon} inheritViewBox sx={{ width: 30, height: 30 }} />
+          <Typography variant="span" sx={{ fontSize:'1.2rem', fontWeight: 'bold' }}>Trello</Typography>
         </Box>
         <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 1 }}>
           <Workspaces />
           <Recent />
           <Starred />
           <Templace />
-          <Button variant="outlined" startIcon={<LibraryAddIcon />}>Create</Button>
+          <Button variant="outlined" startIcon={<LibraryAddIcon />}
+            sx={{
+              color: (theme) => (theme.palette.mode === 'dark' ? '#e5e7eb' : theme.palette.primary.main)
+            }}>Create</Button>
         </Box>
 
       </Box>
@@ -47,12 +53,12 @@ function AppBar() {
         <TextField id="outlined-search" label="Search field" type="search" size='small' sx={{ minWidth: 120 }}/>
         <ModeSelect />
         <Tooltip title="Notifications">
-          <Badge color="secondary" variant="dot" sx={{ cursor: 'pointer', color: 'primary.main' }}>
+          <Badge color="secondary" variant="dot" sx={{ cursor: 'pointer' }}>
             <NotificationsNoneIcon />
           </Badge>
         </Tooltip>
         <Tooltip title="Help">
-          <HelpOutlineIcon sx={{ cursor: 'pointer', color: 'primary.main' }} />
+          <HelpOutlineIcon sx={{ cursor: 'pointer' }} />
         </Tooltip>
         <Profile />
       </Box>
