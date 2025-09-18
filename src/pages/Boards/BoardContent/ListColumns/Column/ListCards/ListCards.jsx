@@ -2,7 +2,7 @@ import React from 'react'
 import Box from '@mui/material/Box'
 import ItemCard from './Card/ItemCard'
 
-function ListCards() {
+function ListCards({ cards }) {
   return (
 
     <>
@@ -23,9 +23,7 @@ function ListCards() {
         '&::-webkit-scrollbar-thumb': { backgroundColor: '#ced0da' },
         '&::-webkit-scrollbar-thumb:hover': { backgroundColor: '#bfc2cf' }
       }}>
-
-        <ItemCard />
-        <ItemCard temporaryHideMedia />
+        {cards?.map(card => <ItemCard key={card._id } card={card} />)}
       </Box>
     </>
   )
