@@ -10,6 +10,7 @@ import AvatarGroup from '@mui/material/AvatarGroup'
 import Tooltip from '@mui/material/Tooltip'
 import Button from '@mui/material/Button'
 import PersonAddIcon from '@mui/icons-material/PersonAdd'
+import { capitalizeFirstLetter } from '@/utils/formatter'
 
 const menu_style ={
   color: 'primary.main',
@@ -25,10 +26,9 @@ const menu_style ={
   }
 
 }
-function BoardBar() {
+function BoardBar({ board }) {
   return (
     <Box px={2} sx={{
-
       width: '100%',
       height: (theme) => theme.trello.boardBarHeight,
       display: 'flex',
@@ -41,19 +41,24 @@ function BoardBar() {
       bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#44444E' : '#ebecf0')
     }}>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-        <Chip sx={menu_style} icon={<DashboardIcon />} label="Demo Trello Board"
+        <Chip sx={menu_style} icon={<DashboardIcon />}
+          label={board?.title}
           onClick={() => {}}
         />
-        <Chip sx={menu_style} icon={<LockPersonIcon />} label="Public/Private Workspace"
+        <Chip sx={menu_style} icon={<LockPersonIcon />}
+          label={capitalizeFirstLetter(board?.type)}
           onClick={() => {}}
         />
-        <Chip sx={menu_style} icon={<CloudIcon />} label="Add To Google Drive"
+        <Chip sx={menu_style} icon={<CloudIcon />}
+          label="Add To Google Drive"
           onClick={() => {}}
         />
-        <Chip sx={menu_style} icon={<ElectricBoltIcon />} label="Automation"
+        <Chip sx={menu_style} icon={<ElectricBoltIcon />}
+          label="Automation"
           onClick={() => {}}
         />
-        <Chip sx={menu_style} icon={<FilterListIcon />} label="Filters"
+        <Chip sx={menu_style} icon={<FilterListIcon />}
+          label="Filters"
           onClick={() => {}}
         />
       </Box>
