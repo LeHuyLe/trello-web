@@ -1,11 +1,11 @@
 import React from 'react'
 import Box from '@mui/material/Box'
 import ItemCard from './Card/ItemCard'
+import { SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable'
 
 function ListCards({ cards }) {
   return (
-
-    <>
+    <SortableContext items={cards?.map(c => c._id)} strategy={verticalListSortingStrategy}>
       <Box sx={{
         p: '0 5px',
         m: '0 5px',
@@ -15,17 +15,17 @@ function ListCards({ cards }) {
         overflowX: 'hidden',
         overflowY: 'auto',
         maxHeight: (theme) => `calc(
-          ${theme.trello.BoardContentHeight} -
-          ${theme.spacing(5)} -
-          ${theme.trello.Columns_header_height} -
-          ${theme.trello.Columns_footer_height}
-          )`,
+              ${theme.trello.BoardContentHeight} -
+              ${theme.spacing(5)} -
+              ${theme.trello.Columns_header_height} -
+              ${theme.trello.Columns_footer_height}
+              )`,
         '&::-webkit-scrollbar-thumb': { backgroundColor: '#ced0da' },
         '&::-webkit-scrollbar-thumb:hover': { backgroundColor: '#bfc2cf' }
       }}>
         {cards?.map(card => <ItemCard key={card._id } card={card} />)}
       </Box>
-    </>
+    </SortableContext>
   )
 }
 

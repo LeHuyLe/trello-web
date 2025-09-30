@@ -21,7 +21,7 @@ export const mockData = {
             columnId: 'column-id-01',
             title: 'Title of card 01',
             description: 'Markdown Syntax (sẽ ở khóa nâng cao nhé)',
-            cover: 'https://scontent.fsgn5-14.fna.fbcdn.net/v/t1.6435-9/138558957_784546302405671_480631728484812619_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=HsHOhXriC0sQ7kNvwFkgj5_&_nc_oc=AdmIgMFflgQUgd4d6C-RqHfAOURRY2vf1sux5b03qISzSP3JhlmsV0UlQQwQEGybQ48&_nc_zt=23&_nc_ht=scontent.fsgn5-14.fna&_nc_gid=RSdJg-3bx-v2gKQ544aliA&oh=00_AfWKjrMUp1BOXUk8QUwHvB1BEVJdu5AS2BVRfhq6dDYbIw&oe=68D4E7EE',
+            cover: 'https://scontent.fsgn2-4.fna.fbcdn.net/v/t1.6435-9/138558957_784546302405671_480631728484812619_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=h2V4bcnQhWEQ7kNvwHXfwlA&_nc_oc=AdkP3zhvZn9qIbtNiubOXJHJDVJLrLAYBLqneHP8HdZUBNvshvHUJ2YTVVciqR6dhGU&_nc_zt=23&_nc_ht=scontent.fsgn2-4.fna&_nc_gid=pkAkakADm3NWg7djbFBRsQ&oh=00_AfZ5PVCHQ352Ib-tVvrc6XVYEfYJzrxl-iQlA4mJzARtfQ&oe=690182AE',
             memberIds: ['test-user-id-01'],
             comments: ['test comment 01', 'test comment 02'],
             attachments: ['test attachment 01', 'test attachment 02', 'test attachment 03']
